@@ -326,6 +326,7 @@ function init(data) {
 
     rl.question("What's your name? ", function (name) {
       // Assign the player object's name property to the user entered name here
+      player.name = name;
       console.log(`Welcome ${player.name} !!!`.blue);
       start(data);
     });
@@ -371,7 +372,6 @@ const shop = (prodList, tBill, lastProd) => {
         } else {
           let iCount = ++player.items;
           // Make the Object.defineProperty() call here to set the value of items using the value of iCount
-
           if (player.items < 10) {
             shop(prodList, totalBill);
           } else {
